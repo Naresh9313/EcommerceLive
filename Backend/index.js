@@ -19,8 +19,12 @@ connectDB();
 const app = express();
 
 //Middlewares
-app.use(cors());
-app.use(express.json());
+app.use(
+  cors({
+    origin: "https://ecommerce-live-orcin.vercel.app",
+    credentials: true,
+  })
+);app.use(express.json());
 app.use(morgan("dev"));
 
 // //Routes
